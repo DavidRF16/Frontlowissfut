@@ -212,10 +212,12 @@ function Register() {
         return
       }
 
-      await registerUser(cleanData)
+      const response =
+        await registerUser(cleanData)
 
       toast.success(
-        'Revisa tu correo para verificar la cuenta'
+        response.message ||
+          'Cuenta creada correctamente'
       )
       navigate('/login')
     } catch (error) {
