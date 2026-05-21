@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #0b0b10;
+  color: white;
+  font-family: Inter, sans-serif;
+  overflow-y: scroll;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  min-width: 0;
+}
+
+button {
+  line-height: 1.2;
+}
+
+.app-main {
+  min-width: 0;
+  flex: 1;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.app-content {
+  width: min(calc(100% - 48px), 1040px);
+  margin-inline: auto;
+  padding-block: 40px 136px;
+}
+
+.app-content > * {
+  width: 100%;
+}
+
+.page-stack > * + * {
+  margin-top: 32px;
+}
+
+.stack-sm > * + * {
+  margin-top: 20px;
+}
+
+.stack-xs > * + * {
+  margin-top: 14px;
+}
+
+.page-header {
+  padding: 22px 26px;
+}
+
+.page-section {
+  padding: 24px;
+}
+
+.card-list {
+  margin-top: 34px;
+}
+
+@media (max-width: 640px) {
+  .page-stack > * + * {
+    margin-top: 22px;
+  }
+
+  .page-header,
+  .page-section {
+    padding: 18px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .app-content {
+    width: min(calc(100% - 120px), 1040px);
+    padding-block: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-content {
+    width: min(calc(100% - 28px), 1040px);
+    padding-block: 24px 112px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5b21b6;
+  border-radius: 999px;
+  border: 2px solid #0b0b10;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d14;
+}
+
+.landing-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #080b10;
+  color: white;
+}
+
+.landing-shell {
+  width: min(calc(100% - 48px), 1180px);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: 28px 40px;
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.landing-brand,
+.landing-nav-actions,
+.landing-cta-row {
+  display: flex;
+  align-items: center;
+}
+
+.landing-brand {
+  min-width: 0;
+  gap: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.landing-brand-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.landing-brand-name {
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.landing-nav-actions {
+  gap: 12px;
+}
+
+.landing-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding-inline: 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.landing-button-primary {
+  border: 1px solid #7c3aed;
+  background: #7c3aed;
+}
+
+.landing-button-primary:hover {
+  background: #8b5cf6;
+}
+
+.landing-button-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+}
+
+.landing-button-ghost:hover {
+  border-color: rgba(167, 139, 250, 0.8);
+}
+
+.landing-button-large {
+  min-height: 52px;
+  padding-inline: 26px;
+}
+
+.landing-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 560px) minmax(280px, 360px);
+  align-items: center;
+  justify-content: center;
+  gap: 76px;
+  min-height: calc(100vh - 300px);
+  padding-block: 72px 56px;
+}
+
+.landing-copy {
+  max-width: 560px;
+}
+
+.landing-eyebrow {
+  color: #c4b5fd;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.landing-title {
+  margin-top: 22px;
+  font-size: clamp(44px, 5vw, 76px);
+  font-weight: 900;
+  line-height: 1.06;
+}
+
+.landing-text {
+  max-width: 540px;
+  margin-top: 24px;
+  color: #d1d5db;
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.landing-cta-row {
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.landing-logo-card {
+  width: 100%;
+  max-width: 340px;
+}
+
+.landing-logo {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+}
+
+.landing-disclaimer {
+  width: 100%;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px 22px;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.landing-features {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.landing-feature {
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 22px;
+}
+
+.landing-feature-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.28);
+  color: #ddd6fe;
+}
+
+.landing-feature-title {
+  color: white;
+  font-weight: 800;
+}
+
+.landing-feature-text {
+  margin-top: 10px;
+  color: #9ca3af;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 920px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+    padding-block: 56px 40px;
+    text-align: center;
+  }
+
+  .landing-copy,
+  .landing-text {
+    margin-inline: auto;
+  }
+
+  .landing-cta-row {
+    justify-content: center;
+  }
+
+  .landing-logo-card {
+    max-width: 300px;
+    margin-inline: auto;
+  }
+
+  .landing-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .landing-shell {
+    width: min(calc(100% - 28px), 1180px);
+    padding-block: 18px 28px;
+  }
+
+  .landing-nav {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .landing-brand-name {
+    font-size: 20px;
+  }
+
+  .landing-brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .landing-nav-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .landing-button {
+    min-height: 38px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+
+  .landing-title {
+    font-size: 40px;
+  }
+
+  .landing-text {
+    font-size: 16px;
+  }
+
+  .landing-cta-row {
+    align-items: stretch;
+  }
+
+  .landing-features {
+    grid-template-columns: 1fr;
+  }
+}
