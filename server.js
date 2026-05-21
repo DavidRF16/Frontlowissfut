@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT; // ← SIN fallback
+const PORT = process.env.PORT || 4173;
 
 app.use(express.static(path.join(__dirname, "dist")));
 
